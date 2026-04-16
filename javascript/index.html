@@ -79,6 +79,10 @@
       </a>
          <!-- Menú -->
       <div class="collapse navbar-collapse" id="navbarNav">
+      
+        <p id="text">Aquest text es pot ocultar.</p>
+<button onclick="toggle()">Mostra/Oculta</button>
+        
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Llenguatges -->
           <li class="nav-item dropdown">
@@ -127,7 +131,11 @@ document.getElementById('text').color. background = "#ffc0cb";
     const themeToggle = document.getElementById('themeToggle'); 
     const themeIcon = themeToggle.querySelector('i');
 
-    themeToggle.addEventListener('click', () => {
+    function toggle() {
+  const el = document.getElementById('text');
+  el.style.display = el.style.display === "none" ? "block" : "none";
+}
+     themeToggle.addEventListener('click', () => {
       if (document.body.getAttribute('data-bs-theme') === 'dark') {
         document.body.setAttribute('data-bs-theme', 'light');
         themeIcon.classList.remove('fa-sun');
